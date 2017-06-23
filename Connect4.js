@@ -34,7 +34,7 @@ $('.board button).on('click', function() {
     $('h3').text(playerTne + ": it is your turn, please pick a column to drop your red chip.");
     currentColor = playerTneColor;
   }
-}
+})
 
 // GRAB ALL THE CIRCLES
 var circles = $('td').document
