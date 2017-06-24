@@ -5,6 +5,41 @@ var playerOneColor = 'blue';
 var playerTwo = prompt('Player Two: Enter Your Name, you will be Red');
 var playerTwoColor = 'red';
 
+var game_on = true;
+var table = $('table tr');
+
+function reportWin(rowNum, colNum) {
+  console.log("You won starting at this row,col");
+  console.log(rowNum);
+  console.log(colNum);
+}
+
+// CHANGE THE COLOR OF A BUTTON
+function changeColor(rowIndex, colIndex, color) {
+  return table.eq(rowIndex).find('td').eq(colIndex).find('button').css('background-color', color);
+}
+
+// INDICATE THE CURRENT COLOR OF A BUTTON
+function reportColor(rowIndex, colIndex) {
+  return table.eq(rowIndex).find('td').eq(colIndex).find('button').css('background-color');
+}
+
+// TAKE IN A COLUMN INDEX, RETURNS THE BOTTOM ROW THAT IS STILL GRAY
+function checkBottom(colIndex) {
+  var colorReport = returnColor(5, colIndex);
+  for (var row = 5; row > -1; row--) {
+    colorReport = returnColor(row, colIndex);
+    if (colorReport === 'gray') {
+      return row
+    }
+  }
+}
+
+//  CHECK TO SEE IF 4 INPUTS ARE THE SAME COLOR
+function colorMatch(one, two, three, four) {
+  return (one === two && one === three && one === four && one !== 'gray' && one !== undefined);
+}
+
 
 // START WITH PLAYER ONE
 var currentPlayer = 1;
