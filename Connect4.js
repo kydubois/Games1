@@ -1,4 +1,4 @@
-// ASSIGN PAYER COLORS
+// ASSIGN PLAYER COLORS
 var playerOne = prompt('Player One: Enter Your Name, you will be Blue');
 var playerOneColor = 'rgb(0, 0, 255)';
 
